@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- android:name conecta MiApp. Sin esta línea, el contenedor de la app nunca se crea. -->
     <application
+        android:name=".MiApp"
         android:label="Tareas"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tareas">
