@@ -1,17 +1,8 @@
 package mx.tec.tareas
 
 import android.app.Application
-import mx.tec.tareas.data.ApiRemota
-import mx.tec.tareas.data.TareasRepository
-import mx.tec.tareas.data.TareasRepositoryReal
+import dagger.hilt.android.HiltAndroidApp
 
-/** Quién construye a quién, en un solo lugar. Como el de las prácticas 5 a 8. */
-class AppContainer {
-    private val api = ApiRemota()
-    val tareasRepository: TareasRepository = TareasRepositoryReal(api)
-}
-
-/** Vive tanto como el proceso. Declarada en el manifiesto con `android:name`. */
-class MiApp : Application() {
-    val container = AppContainer()
-}
+/** Pieza 1: la app avisa que usa Hilt. Aquí vive el contenedor que Hilt genera. */
+@HiltAndroidApp
+class MiApp : Application()
